@@ -80,6 +80,6 @@
             <Font name="Century Gothic Bold" size="17.0" />
          </font>
       </Label>
-      <Button layoutX="332.0" layoutY="271.0" mnemonicParsing="false" onAction="#switchToScene1" opacity="0.0" prefHeight="62.0" prefWidth="182.0" text="next" />
+      <Button layoutX="332.0" layoutY="271.0" mnemonicParsing="false" onAction="#switchToHome" opacity="0.0" prefHeight="62.0" prefWidth="182.0" text="next" />
    </children>
 </AnchorPane>
