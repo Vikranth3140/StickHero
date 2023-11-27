@@ -44,6 +44,9 @@ public class HelloController implements Initializable {
             isSpaceBarPressed = true;
             isStickExtending = true;
             stickLine.setEndY(stickLine.getEndY() - 10); // Adjust the speed as needed
+
+            // Make the line visible by setting opacity to 1
+            stickLine.setOpacity(1.0);
         }
     }
 
@@ -73,6 +76,13 @@ public class HelloController implements Initializable {
 
         // Create a new Line object
         stickLine = new Line(startX, startY, endX, endY);
+
+        // Set the width and color of the line
+        stickLine.setStrokeWidth(10.0);
+        stickLine.setStroke(javafx.scene.paint.Color.BROWN);
+
+        // Set the initial opacity to zero
+        stickLine.setOpacity(0.0);
 
         // Create a KeyFrame to update the stick line position
         KeyFrame keyFrame = new KeyFrame(Duration.millis(10), event -> {
