@@ -43,6 +43,7 @@ public class HelloController implements Initializable {
         if (event.getCode() == KeyCode.SPACE) {
             isSpaceBarPressed = true;
             isStickExtending = true;
+            stickLine.setEndY(stickLine.getEndY() - 10); // Adjust the speed as needed
         }
     }
 
@@ -105,18 +106,6 @@ public class HelloController implements Initializable {
         // Add the stickLine to the AnchorPane
         anchorPane.getChildren().add(stickLine);
 
-        // Create a KeyFrame to update the stick line position
-        KeyFrame keyFrame = new KeyFrame(Duration.millis(10), event -> {
-            if (isStickExtending) {
-                // Update the position of the stick line
-                stickLine.setEndY(stickLine.getEndY() - 1); // Adjust the speed as needed
-            }
-        });
-
-        // Create a timeline with the key frame
-        controller.setTimeline(new Timeline(keyFrame));
-        controller.getTimeline().setCycleCount(Timeline.INDEFINITE); // Repeat indefinitely
-
         // Set up the scene with the loaded root
         Scene homeScene = new Scene(root);
 
@@ -128,9 +117,6 @@ public class HelloController implements Initializable {
         stage.setScene(homeScene);
         stage.show();
     }
-
-
-
 
     public void switchToEnd() throws IOException {
         if (stickLine != null) {
