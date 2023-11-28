@@ -1,12 +1,14 @@
 // HelloController.java
 package com.example.stickhero;
 
+import entities.Character;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
@@ -24,6 +26,10 @@ public class HelloController implements Initializable {
     private Stage stage;
     private Scene scene;
     private Line stickLine;
+    private Character character;
+    // Updated fx:id for the character's ImageView
+    @FXML
+    private ImageView characterImageView;
 
     private Timeline timeline;
 
@@ -55,6 +61,23 @@ public class HelloController implements Initializable {
         if (event.getCode() == KeyCode.SPACE) {
             isSpaceBarPressed = false;
             isStickExtending = false;
+
+            double angle = Math.toRadians(stickLine.getRotate()); // Convert to radians
+
+            // Calculate the new endX and endY
+            double length = Math.abs(stickLine.getStartY() - stickLine.getEndY());
+            double newEndX = stickLine.getStartX() + length * Math.cos(angle);
+            double newEndY = stickLine.getStartY() - length * Math.sin(angle);
+
+            // Set the new endX and endY
+            stickLine.setEndX(newEndX);
+            stickLine.setEndY(newEndY);
+
+            // Move the character forward
+            character.moveForward();
+
+            // Update the layoutX of the character's ImageView
+            character.getCharacterView().setLayoutX(character.getPositionX());
         }
     }
 
@@ -84,6 +107,9 @@ public class HelloController implements Initializable {
         // Set the initial opacity to zero
         stickLine.setOpacity(0.0);
 
+        // Initialize the scene
+        scene = new Scene(new AnchorPane());
+
         // Create a KeyFrame to update the stick line position
         KeyFrame keyFrame = new KeyFrame(Duration.millis(10), event -> {
             if (isStickExtending) {
@@ -95,6 +121,16 @@ public class HelloController implements Initializable {
         // Create a timeline with the key frame
         timeline = new Timeline(keyFrame);
         timeline.setCycleCount(Timeline.INDEFINITE); // Repeat indefinitely
+
+        // Initialize the character
+        character = new Character(157.0, 475.0, 10.0); // Adjust speed as needed
+
+        if (scene != null) {
+            ((AnchorPane) scene.getRoot()).getChildren().add(character.getCharacterView());
+        }
+
+        // Set the injected characterImageView
+        characterImageView = character.getCharacterView();
     }
 
     public void switchToHome() throws IOException {

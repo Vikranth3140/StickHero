@@ -16,7 +16,7 @@
          </image>
       </ImageView>
 
-      <ImageView fitHeight="41.0" fitWidth="52.0" layoutX="109.0" layoutY="436.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="characterImageView" fitHeight="41.0" fitWidth="52.0" layoutX="109.0" layoutY="436.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@hero-removebg-preview%203.png" />
          </image>

@@ -1,11 +1,13 @@
 package entities;
 
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
 public class Character {
     private ImageView characterView;
     private double positionX;
     private double positionY;
+    private double speed;
     private boolean isWalking;
     private boolean isUpsideDown;
     private boolean isFalling;
@@ -76,8 +78,11 @@ public class Character {
         this.cherriesCollected = cherriesCollected;
     }
 
-    public void walk() {
-        //walk function
+    public void moveForward() {
+        positionX += speed;
+
+        // Update the layoutX of the character's ImageView
+        characterView.setLayoutX(positionX);
     }
 
     public void fall() {
@@ -102,5 +107,17 @@ public class Character {
 
     public void changeCharacter() {
         //change function
+    }
+
+    public Character(double positionX, double positionY, double speed) {
+        this.positionX = positionX;
+        this.positionY = positionY;
+        this.speed = speed;
+
+        // Initialize characterView
+        this.characterView = new ImageView(new Image("C:\\Users\\vikra\\IdeaProjects\\StickHero\\src\\main\\resources\\com\\example\\stickhero\\hero-removebg-preview 3.png"));
+
+        // Make the character visible
+        this.characterView.setVisible(true);
     }
 }
