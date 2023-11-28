@@ -1,7 +1,9 @@
+// Character.java
 package entities;
 
-import javafx.scene.image.Image;
+import javafx.animation.TranslateTransition;
 import javafx.scene.image.ImageView;
+import javafx.util.Duration;
 
 public class Character {
     private ImageView characterView;
@@ -80,44 +82,52 @@ public class Character {
 
     public void moveForward() {
         positionX += speed;
+        characterView.setX(characterView.getX()+50);
 
         // Update the layoutX of the character's ImageView
         characterView.setLayoutX(positionX);
     }
 
-    public void fall() {
-        //fall function
+    public void moveUp() {
+        characterView.setY(characterView.getY()-10);
     }
 
-    public void UpsideDownWalk() {
-        //upside down walk function
+    public void translate(double distance) {
+        TranslateTransition translate = new TranslateTransition();
+        translate.setNode(characterView);
+        translate.setDuration(Duration.millis(1500));
+        translate.setByX(distance);
+        translate.play();
+    }
+
+    public void fall() {
+        // fall function
+    }
+
+    public void upsideDownWalk() {
+        // upside down walk function
     }
 
     public void collectCherries() {
-        //collect cherries function
+        // collect cherries function
     }
 
     public void stickPosition() {
-        //stick position function
+        // stick position function
     }
 
     public void jump() {
-        //jump function
+        // jump function
     }
 
     public void changeCharacter() {
-        //change function
+        // change function
     }
 
-    public Character(double positionX, double positionY, double speed) {
+    public Character(double positionX, double positionY, double speed, ImageView characterImageView) {
         this.positionX = positionX;
         this.positionY = positionY;
         this.speed = speed;
-
-        // Initialize characterView
-        this.characterView = new ImageView(new Image("C:\\Users\\vikra\\IdeaProjects\\StickHero\\src\\main\\resources\\com\\example\\stickhero\\hero-removebg-preview 3.png"));
-
-        // Make the character visible
-        this.characterView.setVisible(true);
+        this.characterView = characterImageView;
     }
 }

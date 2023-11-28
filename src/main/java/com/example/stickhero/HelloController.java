@@ -27,12 +27,10 @@ public class HelloController implements Initializable {
     private Scene scene;
     private Line stickLine;
     private Character character;
-    // Updated fx:id for the character's ImageView
+
     @FXML
     private ImageView characterImageView;
-
     private Timeline timeline;
-
     private boolean isSpaceBarPressed = false;
     private boolean isStickExtending = false;
 
@@ -49,7 +47,7 @@ public class HelloController implements Initializable {
         if (event.getCode() == KeyCode.SPACE) {
             isSpaceBarPressed = true;
             isStickExtending = true;
-            stickLine.setEndY(stickLine.getEndY() - 10); // Adjust the speed as needed
+            stickLine.setEndY(stickLine.getEndY() - 10);
 
             // Make the line visible by setting opacity to 1
             stickLine.setOpacity(1.0);
@@ -62,7 +60,7 @@ public class HelloController implements Initializable {
             isSpaceBarPressed = false;
             isStickExtending = false;
 
-            double angle = Math.toRadians(stickLine.getRotate()); // Convert to radians
+            double angle = Math.toRadians(stickLine.getRotate());
 
             // Calculate the new endX and endY
             double length = Math.abs(stickLine.getStartY() - stickLine.getEndY());
@@ -73,13 +71,15 @@ public class HelloController implements Initializable {
             stickLine.setEndX(newEndX);
             stickLine.setEndY(newEndY);
 
-            // Move the character forward
-            character.moveForward();
+            // Move the character Up
+             character.moveUp();
+            System.out.println("Character moved forward to positionX: " + character.getPositionX());
 
-            // Update the layoutX of the character's ImageView
-            character.getCharacterView().setLayoutX(character.getPositionX());
+            // Translate the character
+            character.translate(stickLine.getEndX() - stickLine.getStartX() + 30);
         }
     }
+
 
     public Timeline getTimeline() {
         return timeline;
@@ -123,14 +123,7 @@ public class HelloController implements Initializable {
         timeline.setCycleCount(Timeline.INDEFINITE); // Repeat indefinitely
 
         // Initialize the character
-        character = new Character(157.0, 475.0, 10.0); // Adjust speed as needed
-
-        if (scene != null) {
-            ((AnchorPane) scene.getRoot()).getChildren().add(character.getCharacterView());
-        }
-
-        // Set the injected characterImageView
-        characterImageView = character.getCharacterView();
+        character = new Character(157.0, 475.0, 1.0, characterImageView); // Adjust speed as needed
     }
 
     public void switchToHome() throws IOException {
