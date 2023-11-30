@@ -2,6 +2,9 @@
 package com.example.stickhero;
 
 import entities.Character;
+import entities.Platform;
+import javafx.animation.Animation;
+import javafx.animation.AnimationTimer;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.fxml.FXML;
@@ -13,20 +16,42 @@ import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.shape.Line;
+import javafx.scene.shape.Rectangle;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javafx.fxml.FXMLLoader;
 import javafx.util.Duration;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 public class HelloController implements Initializable {
+
+    AnimationTimer gameLoop;
+    @FXML
+    private AnchorPane plane;
+
+    @FXML
+    private Text score;
+
+    private double accelerationTime = 0;
+    private int gameTime = 0;
+    private int scoreCounter = 0;
+
+    ArrayList<Rectangle> platforms = new ArrayList<>();
+
+    private Platform platformHandler;
+    //private ArrayList<Rectangle> platforms = new ArrayList<>();
+
 
     private Stage stage;
     private Scene scene;
     private Line stickLine;
     private Character character;
+
+
 
     @FXML
     private ImageView characterImageView;
@@ -91,6 +116,11 @@ public class HelloController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+
+        double planeHeight = 600;
+        double planeWidth = 400;
+        platformHandler = new Platform(plane, planeHeight, planeWidth);
+
         // Set initial coordinates for the stick
         double startX = 157.0;
         double startY = 475.0;
@@ -124,7 +154,39 @@ public class HelloController implements Initializable {
 
         // Initialize the character
         character = new Character(157.0, 475.0, 1.0, characterImageView); // Adjust speed as needed
+
+        gameLoop = new AnimationTimer() {
+            @Override
+            public void handle(long l) {
+                update();
+            }
+        };
+
+        load1();
+
+        gameLoop.start();
     }
+
+    // Called every game frame
+    private void update() {
+        gameTime++;
+        accelerationTime++;
+
+        platformHandler.movePlatforms(platforms);
+
+        if(gameTime % 500 == 0){
+//            platforms.clear();
+            platforms.addAll(platformHandler.createPlatforms());
+        }
+
+        // Your other game logic goes here
+    }
+
+    // Called once, at the game start
+    private void load1() {
+        platforms.addAll(platformHandler.createPlatforms());
+    }
+
 
     public void switchToHome() throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("home.fxml"));
