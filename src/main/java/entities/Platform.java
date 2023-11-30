@@ -51,7 +51,10 @@ public class Platform {
         Rectangle platform = new Rectangle(positionX, positionY,recWidth,platformHeight);
 
         // Add the created platform to the game plane
-        plane.getChildren().add(platform);
+        if (plane != null) {
+            plane.getChildren().add(platform);
+        }
+
 
         // Return the platform as a list (useful if you plan to have multiple platforms)
         return new ArrayList<>(Arrays.asList(platform));

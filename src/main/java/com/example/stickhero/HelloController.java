@@ -43,15 +43,11 @@ public class HelloController implements Initializable {
     ArrayList<Rectangle> platforms = new ArrayList<>();
 
     private Platform platformHandler;
-    //private ArrayList<Rectangle> platforms = new ArrayList<>();
-
 
     private Stage stage;
     private Scene scene;
     private Line stickLine;
     private Character character;
-
-
 
     @FXML
     private ImageView characterImageView;
@@ -144,7 +140,7 @@ public class HelloController implements Initializable {
         KeyFrame keyFrame = new KeyFrame(Duration.millis(10), event -> {
             if (isStickExtending) {
                 // Update the position of the stick line
-                stickLine.setEndY(stickLine.getEndY() - 1); // Adjust the speed as needed
+                stickLine.setEndY(stickLine.getEndY() - 1);
             }
         });
 
@@ -153,7 +149,7 @@ public class HelloController implements Initializable {
         timeline.setCycleCount(Timeline.INDEFINITE); // Repeat indefinitely
 
         // Initialize the character
-        character = new Character(157.0, 475.0, 1.0, characterImageView); // Adjust speed as needed
+        character = new Character(157.0, 475.0, 1.0, characterImageView);
 
         gameLoop = new AnimationTimer() {
             @Override
@@ -161,8 +157,6 @@ public class HelloController implements Initializable {
                 update();
             }
         };
-
-        load1();
 
         gameLoop.start();
     }
@@ -175,18 +169,10 @@ public class HelloController implements Initializable {
         platformHandler.movePlatforms(platforms);
 
         if(gameTime % 500 == 0){
-//            platforms.clear();
             platforms.addAll(platformHandler.createPlatforms());
         }
 
-        // Your other game logic goes here
     }
-
-    // Called once, at the game start
-    private void load1() {
-        platforms.addAll(platformHandler.createPlatforms());
-    }
-
 
     public void switchToHome() throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("home.fxml"));
