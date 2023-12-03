@@ -92,6 +92,10 @@ public class Character {
         characterView.setY(characterView.getY()-10);
     }
 
+    public void moveDown() {
+        characterView.setY(characterView.getY()+10);
+    }
+
     public void translate(double distance) {
         TranslateTransition translate = new TranslateTransition();
         translate.setNode(characterView);
