@@ -3,6 +3,7 @@ package com.example.stickhero;
 
 import entities.Character;
 import entities.Platform;
+import entities.Shark;
 import javafx.animation.Animation;
 import javafx.animation.AnimationTimer;
 import javafx.animation.KeyFrame;
@@ -48,9 +49,13 @@ public class HelloController implements Initializable {
     private Scene scene;
     private Line stickLine;
     private Character character;
+    private Shark shark;
 
     @FXML
     private ImageView characterImageView;
+
+    @FXML
+    private ImageView sharkImageView;
     private Timeline timeline;
     private boolean isSpaceBarPressed = false;
     private boolean isStickExtending = false;
@@ -149,7 +154,17 @@ public class HelloController implements Initializable {
         timeline.setCycleCount(Timeline.INDEFINITE);
 
         // Initialize the character
-        character = new Character(157.0, 475.0, 1.0, characterImageView);
+        character = new Character(157.0, 400, 1.0, characterImageView);
+
+        // Initialize the shark
+        shark = new Shark(-6, 185, 1.0, sharkImageView);
+
+        // Translate the shark
+        shark.translate(600);
+
+        // Move the shark Down
+        shark.moveDown();
+        System.out.println("Shark moved forward to positionX: " + shark.getPositionX());
 
         gameLoop = new AnimationTimer() {
             @Override

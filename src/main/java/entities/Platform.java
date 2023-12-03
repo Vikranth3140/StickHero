@@ -6,6 +6,7 @@ import javafx.scene.shape.Rectangle;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import java.util.Random;
 
 public class Platform {
@@ -33,7 +34,7 @@ public class Platform {
 
     public ArrayList<Rectangle> createPlatforms() {
         // Fixed height for the platform
-        int platformHeight = 250;
+        int platformHeight = 254;
 
         // Randomize the platform width within a range
         double recWidth = random.nextDouble() * (widthMax - widthMin) + widthMin;
@@ -42,7 +43,7 @@ public class Platform {
         positionX = recWidth + space;
 
         if (positionX > planeWidth) {
-            positionX = space; // Reset to a starting position
+            positionX = space;
         }
 
         positionY = 477;
@@ -50,11 +51,10 @@ public class Platform {
         Rectangle platform = new Rectangle(positionX, positionY,recWidth,platformHeight);
 
         // Add the created platform to the game plane
-
         plane.getChildren().addAll(platform);
 
-        // Return the platform as a list (useful if you plan to have multiple platforms)
-        return new ArrayList<>(Arrays.asList(platform));
+        // Return the platform as a list
+        return new ArrayList<>(List.of(platform));
     }
 
     public void movePlatforms(ArrayList<Rectangle> platforms) {
