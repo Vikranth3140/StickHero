@@ -35,12 +35,11 @@ public class Platform {
         // Fixed height for the platform
         int platformHeight = 250;
 
-
         // Randomize the platform width within a range
         double recWidth = random.nextDouble() * (widthMax - widthMin) + widthMin;
         double space = random.nextDouble() * (spaceMax - spaceMin) + spaceMin;
 
-        positionX += recWidth + space;
+        positionX = recWidth + space;
 
         if (positionX > planeWidth) {
             positionX = space; // Reset to a starting position
@@ -51,10 +50,8 @@ public class Platform {
         Rectangle platform = new Rectangle(positionX, positionY,recWidth,platformHeight);
 
         // Add the created platform to the game plane
-        if (plane != null) {
-            plane.getChildren().add(platform);
-        }
 
+        plane.getChildren().addAll(platform);
 
         // Return the platform as a list (useful if you plan to have multiple platforms)
         return new ArrayList<>(Arrays.asList(platform));

@@ -113,8 +113,8 @@ public class HelloController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
-        double planeHeight = 600;
-        double planeWidth = 400;
+        double planeHeight = 730;
+        double planeWidth = 834;
         platformHandler = new Platform(plane, planeHeight, planeWidth);
 
         // Set initial coordinates for the stick
@@ -146,7 +146,7 @@ public class HelloController implements Initializable {
 
         // Create a timeline with the key frame
         timeline = new Timeline(keyFrame);
-        timeline.setCycleCount(Timeline.INDEFINITE); // Repeat indefinitely
+        timeline.setCycleCount(Timeline.INDEFINITE);
 
         // Initialize the character
         character = new Character(157.0, 475.0, 1.0, characterImageView);
@@ -168,8 +168,10 @@ public class HelloController implements Initializable {
 
         platformHandler.movePlatforms(platforms);
 
-        if(gameTime % 500 == 0){
+        if(gameTime % 200 == 0){
+//            ArrayList<Recatangle> newplatforms = platformHandler.createPlatforms();
             platforms.addAll(platformHandler.createPlatforms());
+//            plane.getChildren().addAll();
         }
 
     }
