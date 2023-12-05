@@ -160,7 +160,7 @@ public class HelloController implements Initializable {
         shark = new Shark(-6, 185, 1.0, sharkImageView);
 
         // Translate the shark
-        shark.translate(600);
+        shark.translate(725);
 
         // Move the shark Down
         shark.moveDown();
