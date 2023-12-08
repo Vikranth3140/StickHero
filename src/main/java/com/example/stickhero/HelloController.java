@@ -131,9 +131,11 @@ public class HelloController implements Initializable {
         // Create a new Line object
         stickLine = new Line(startX, startY, endX, endY);
 
+
+
         // Set the width and color of the line
         stickLine.setStrokeWidth(10.0);
-        stickLine.setStroke(javafx.scene.paint.Color.rgb(198, 101, 29));
+        stickLine.setStroke(javafx.scene.paint.Color.rgb(150, 75, 0));
 
         // Set the initial opacity to zero
         stickLine.setOpacity(0.0);
@@ -183,13 +185,18 @@ public class HelloController implements Initializable {
 
         platformHandler.movePlatforms(platforms);
 
-        if(gameTime % 200 == 0){
-//            ArrayList<Recatangle> newplatforms = platformHandler.createPlatforms();
-            platforms.addAll(platformHandler.createPlatforms());
-//            plane.getChildren().addAll();
+        if (isStickExtending && collisionDetection(stickLine, platforms)) {
+            // Handle collision (stop the moving platforms, display game over, etc.)
+            gameLoop.stop();
+            System.out.println("Game Over! Collision detected.");
+            return;
         }
 
+        if (gameTime % 200 == 0) {
+            platforms.addAll(platformHandler.createPlatforms());
+        }
     }
+
 
     public void switchToHome() throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("home.fxml"));
@@ -231,5 +238,14 @@ public class HelloController implements Initializable {
         } else {
             System.err.println("stickLine is null. Please check your FXML file.");
         }
+    }
+
+    public boolean collisionDetection(Line stick, ArrayList<Rectangle> obstacles) {
+        for (Rectangle rectangle : obstacles) {
+            if (stick.getBoundsInParent().intersects(rectangle.getBoundsInParent())) {
+                return true;
+            }
+        }
+        return false;
     }
 }

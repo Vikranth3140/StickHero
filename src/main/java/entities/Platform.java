@@ -73,7 +73,7 @@ public class Platform {
         ArrayList<Rectangle> outOfScreen = new ArrayList<>();
 
         for (Rectangle platform : platforms) {
-            movePlatform(platform, -2);
+            movePlatform(platform, -1.5);
 
             if (platform.getX() + platform.getLayoutX() + platform.getWidth() <= 0) {
                 outOfScreen.add(platform);
