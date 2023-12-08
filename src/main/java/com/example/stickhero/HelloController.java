@@ -133,7 +133,7 @@ public class HelloController implements Initializable {
 
         // Set the width and color of the line
         stickLine.setStrokeWidth(10.0);
-        stickLine.setStroke(javafx.scene.paint.Color.BROWN);
+        stickLine.setStroke(javafx.scene.paint.Color.rgb(198, 101, 29));
 
         // Set the initial opacity to zero
         stickLine.setOpacity(0.0);

@@ -4,7 +4,6 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.shape.Line?>
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
@@ -44,19 +43,9 @@
             <Font size="19.0" />
          </font>
       </Label>
-      <ImageView fitHeight="54.0" fitWidth="50.0" layoutX="338.0" layoutY="436.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@9162409-removebg-preview.png" />
-         </image>
-      </ImageView>
       <ImageView fx:id="sharkImageView" fitHeight="150.0" fitWidth="200.0" layoutX="-6.0" layoutY="185.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@Untitled-removebg-preview.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="254.0" fitWidth="105.0" layoutX="425.0" layoutY="477.0" pickOnBounds="true">
-         <image>
-            <Image url="@pillar3pillar.png" />
          </image>
       </ImageView>
       <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="606.0" layoutY="535.0" pickOnBounds="true" preserveRatio="true">
@@ -64,17 +53,6 @@
             <Image url="@octopus.png" />
          </image>
       </ImageView>
-      <Line endX="-86.39996337890625" layoutX="572.0" layoutY="480.0" startX="-103.4000244140625" stroke="RED" strokeWidth="5.0" />
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#060b30" height="254.0" layoutX="696.0" layoutY="477.0" stroke="BLACK" strokeType="INSIDE" width="71.0" />
-      <Line endX="-80.4000244140625" layoutX="821.0" layoutY="480.0" startX="-96.20001220703125" stroke="RED" strokeWidth="5.0" />
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#060b30" height="254.0" layoutX="256.0" layoutY="477.0" stroke="BLACK" strokeType="INSIDE" width="44.0" />
-      <Line endX="-92.39999389648438" layoutX="375.0" layoutY="480.0" startX="-103.4000244140625" stroke="RED" strokeWidth="5.0" />
-      <ImageView fitHeight="254.0" fitWidth="105.0" layoutX="52.0" layoutY="477.0" pickOnBounds="true">
-         <image>
-            <Image url="@pillar5pillar.png" />
-         </image>
-      </ImageView>
-      <Line endX="-94.19998931884766" layoutX="208.0" layoutY="480.0" startX="-113.4000015258789" stroke="RED" strokeWidth="5.0" />
       <ImageView fitHeight="60.0" fitWidth="57.0" layoutX="768.0" layoutY="327.0" opacity="0.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@next.png" />

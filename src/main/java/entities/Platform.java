@@ -17,8 +17,8 @@ public class Platform {
     private double widthMax = 160;
     private double widthMin = 45;
 
-    private double spaceMin = 65;
-    private double spaceMax = 180;
+    private double spaceMin = 10;
+    private double spaceMax = 100;
 
     private Random random = new Random();
     private double positionX;
@@ -40,22 +40,29 @@ public class Platform {
         double recWidth = random.nextDouble() * (widthMax - widthMin) + widthMin;
         double space = random.nextDouble() * (spaceMax - spaceMin) + spaceMin;
 
-        positionX = recWidth + space;
+        positionX = 720;
 
-        if (positionX > planeWidth) {
-            positionX = space;
+        if (positionX + recWidth > planeWidth) {
+            positionX = planeWidth - recWidth;
         }
 
         positionY = 477;
 
-        Rectangle platform = new Rectangle(positionX, positionY,recWidth,platformHeight);
+        // Create a white rectangle
+        Rectangle whitePlatform = new Rectangle(positionX, positionY, recWidth, platformHeight);
+        whitePlatform.setFill(javafx.scene.paint.Color.WHITE);
 
-        // Add the created platform to the game plane
-        plane.getChildren().addAll(platform);
+        // Create a red rectangle on top of the white rectangle
+        Rectangle redPlatform = new Rectangle(positionX + recWidth * 0.375, positionY, recWidth * 0.25, 10);
+        redPlatform.setFill(javafx.scene.paint.Color.RED);
 
-        // Return the platform as a list
-        return new ArrayList<>(List.of(platform));
+        // Add the created platforms to the game plane
+        plane.getChildren().addAll(whitePlatform, redPlatform);
+
+        // Return the platforms as a list
+        return new ArrayList<>(List.of(whitePlatform, redPlatform));
     }
+
 
     public void movePlatforms(ArrayList<Rectangle> platforms) {
         if (plane == null) {
@@ -80,14 +87,6 @@ public class Platform {
         platform.setX(platform.getX() + amount);
         //platform.setLayoutX(platform.getX());
     }
-
-//    private Rectangle createPlatform(double x, double y, double width) {
-//        // Fixed height for the platform
-//        int platformHeight = 20;
-//
-//        Rectangle platform = new Rectangle(x, y, width, platformHeight);
-//        return platform;
-//    }
 
     public double getPositionX() {
         return positionX;

@@ -55,7 +55,7 @@ public class Shark {
     public void translate(double distance) {
         TranslateTransition translate = new TranslateTransition();
         translate.setNode(sharkView);
-        translate.setDuration(Duration.millis(15000));
+        translate.setDuration(Duration.millis(150000));
         translate.setByX(distance);
         translate.play();
     }
