@@ -391,7 +391,7 @@ public class HelloController implements Initializable {
     }
 
     Rectangle rectangle;
-    public Image cherryImage = new Image(Objects.requireNonNull(getClass().getResourceAsStream("/com/example/stickhero/9162409-removebg-preview.png")));
+    public Image cherryImage = new Image(Objects.requireNonNull(getClass().getResourceAsStream("/com/example/stickhero/cherry.png")));
 
     public boolean collectCherry() {
         return cherryImageView.getX() == characterImageView.getX();
@@ -741,7 +741,7 @@ public class HelloController implements Initializable {
     }
 
     public void mediaPlayer() {
-        Media media = new Media(String.valueOf(getClass().getResource("/com/example/stickhero/sb_indreams(chosic.com).mp3")));
+        Media media = new Media(String.valueOf(getClass().getResource("/com/example/stickhero/music.mp3")));
 
         // Create a MediaPlayer
         mediaPlayer = new MediaPlayer(media);

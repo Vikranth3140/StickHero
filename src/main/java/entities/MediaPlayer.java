@@ -8,7 +8,7 @@ public class MediaPlayer {
 
     private MediaPlayer() {
         // Load the media file
-        Media media = new Media(getClass().getResource("/com/example/stickhero/sb_indreams(chosic.com).mp3").toString());
+        Media media = new Media(getClass().getResource("/com/example/stickhero/music.mp3").toString());
 
         // Create the MediaPlayer
         mediaPlayer = new javafx.scene.media.MediaPlayer(media);

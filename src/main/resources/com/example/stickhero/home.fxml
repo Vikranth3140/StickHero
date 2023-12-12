@@ -16,7 +16,7 @@
       </ImageView>
       <ImageView fx:id="characterImageView" fitHeight="54.0" fitWidth="56.0" layoutX="100.0" layoutY="339.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@hero-removebg-preview%203.png" />
+            <Image url="@character.png" />
          </image>
       </ImageView>
       <Label layoutX="-7.0" layoutY="157.0" prefHeight="15.0" prefWidth="0.0">
@@ -26,7 +26,7 @@
       </Label>
       <ImageView fx:id="sharkImageView" fitHeight="150.0" fitWidth="200.0" layoutX="-7.0" layoutY="144.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@Untitled-removebg-preview.png" />
+            <Image url="@shark.png" />
          </image>
       </ImageView>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#7aa9a4" height="70.0" layoutX="214.0" layoutY="150.0" opacity="0.48" stroke="#aeaeae" strokeType="INSIDE" strokeWidth="0.0" width="105.0" />
@@ -38,13 +38,13 @@
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#7aa9a4" height="41.0" layoutX="33.0" layoutY="33.0" opacity="0.48" stroke="#aeaeae" strokeType="INSIDE" strokeWidth="0.0" width="71.0" />
       <ImageView fitHeight="41.0" fitWidth="37.0" layoutX="50.0" layoutY="35.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@pause-removebg-preview.png" />
+            <Image url="@pause.png" />
          </image>
       </ImageView>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#7aa9a4" height="41.0" layoutX="431.0" layoutY="33.0" opacity="0.48" stroke="#aeaeae" strokeType="INSIDE" strokeWidth="0.0" width="71.0" />
       <ImageView fitHeight="41.0" fitWidth="37.0" layoutX="435.0" layoutY="34.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@9162409-removebg-preview.png" />
+            <Image url="@cherry.png" />
          </image>
       </ImageView>
       <Label fx:id="score" layoutX="476.0" layoutY="40.0" text="0" textFill="WHITE">
@@ -54,7 +54,7 @@
       </Label>
       <ImageView fx:id="cherryImageView" fitHeight="41.0" fitWidth="56.0" layoutX="108.0" layoutY="341.0" pickOnBounds="true" preserveRatio="true" x="200.0">
          <image>
-            <Image url="@9162409-removebg-preview.png" />
+            <Image url="@cherry.png" />
          </image>
       </ImageView>
    </children>

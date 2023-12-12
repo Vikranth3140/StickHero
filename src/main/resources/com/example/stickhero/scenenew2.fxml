@@ -17,11 +17,6 @@
             <Image url="@Frame%204bg.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="41.0" fitWidth="52.0" layoutX="105.0" layoutY="436.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@hero-removebg-preview%203.png" />
-         </image>
-      </ImageView>
       <Label layoutX="204.0" layoutY="287.0" text="Hold your finger on screen to stretch out the stick" textFill="WHITE">
          <font>
             <Font name="System Bold" size="20.0" />
@@ -36,13 +31,13 @@
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#7aa9a4" height="41.0" layoutX="48.0" layoutY="33.0" opacity="0.48" stroke="#aeaeae" strokeType="INSIDE" strokeWidth="0.0" width="71.0" />
       <ImageView fitHeight="41.0" fitWidth="37.0" layoutX="65.0" layoutY="35.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@pause-removebg-preview.png" />
+            <Image url="@pause.png" />
          </image>
       </ImageView>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#7aa9a4" height="41.0" layoutX="743.0" layoutY="31.0" opacity="0.48" stroke="#aeaeae" strokeType="INSIDE" strokeWidth="0.0" width="71.0" />
       <ImageView fitHeight="41.0" fitWidth="37.0" layoutX="747.0" layoutY="32.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@9162409-removebg-preview.png" />
+            <Image url="@cherry.png" />
          </image>
       </ImageView>
       <Label layoutX="788.0" layoutY="38.0" text="5" textFill="WHITE">
@@ -52,17 +47,17 @@
       </Label>
       <ImageView fitHeight="54.0" fitWidth="50.0" layoutX="338.0" layoutY="436.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@9162409-removebg-preview.png" />
+            <Image url="@cherry.png" />
          </image>
       </ImageView>
       <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="-6.0" layoutY="185.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@Untitled-removebg-preview.png" />
+            <Image url="@shark.png" />
          </image>
       </ImageView>
       <ImageView fitHeight="254.0" fitWidth="105.0" layoutX="425.0" layoutY="477.0" pickOnBounds="true">
          <image>
-            <Image url="@pillar3pillar.png" />
+            <Image url="@pillar1pillar.png" />
          </image>
       </ImageView>
       <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="606.0" layoutY="535.0" pickOnBounds="true" preserveRatio="true">
@@ -89,5 +84,10 @@
          </image>
       </ImageView>
       <Button layoutX="773.0" layoutY="327.0" mnemonicParsing="false" onAction="#switchToScene3" opacity="0.0" text="next" />
+      <ImageView fitHeight="95.0" fitWidth="90.0" layoutX="60.0" layoutY="391.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@diver.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

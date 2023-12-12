@@ -12,7 +12,7 @@
    <children>
       <ImageView fitHeight="733.0" fitWidth="840.0" layoutX="-1.0" layoutY="-1.0" pickOnBounds="true">
          <image>
-            <Image url="@underwater_scenery2.jpg" />
+            <Image url="@ underwater_scenery.jpg" />
          </image>
       </ImageView>
       <ImageView fitHeight="187.0" fitWidth="177.0" layoutX="449.0" layoutY="548.0" pickOnBounds="true" preserveRatio="true">
@@ -22,7 +22,7 @@
       </ImageView>
       <ImageView fitHeight="254.0" fitWidth="283.0" layoutX="19.0" layoutY="98.0" opacity="0.74" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@Untitled-removebg-preview.png" />
+            <Image url="@shark.png" />
          </image>
       </ImageView>
       <Label layoutX="272.0" layoutY="69.0" text="GAME OVER!" textFill="WHITE">
@@ -60,7 +60,7 @@
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#7aa9a4" height="41.0" layoutX="744.0" layoutY="28.0" opacity="0.48" stroke="#aeaeae" strokeType="INSIDE" strokeWidth="0.0" width="71.0" />
       <ImageView fitHeight="41.0" fitWidth="37.0" layoutX="748.0" layoutY="29.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@9162409-removebg-preview.png" />
+            <Image url="@cherry.png" />
          </image>
       </ImageView>
       <Label layoutX="789.0" layoutY="35.0" text="9" textFill="WHITE">
@@ -71,7 +71,7 @@
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="41.0" layoutX="449.0" layoutY="441.0" opacity="0.48" stroke="WHITE" strokeType="INSIDE" strokeWidth="3.0" width="71.0" />
       <ImageView fitHeight="41.0" fitWidth="37.0" layoutX="453.0" layoutY="442.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@9162409-removebg-preview.png" />
+            <Image url="@cherry.png" />
          </image>
       </ImageView>
       <Label layoutX="494.0" layoutY="448.0" text="10" textFill="WHITE">
@@ -99,7 +99,7 @@
       <Circle fill="WHITE" layoutX="614.0" layoutY="584.0" radius="34.0" stroke="WHITE" strokeType="INSIDE" />
       <ImageView fitHeight="82.0" fitWidth="90.0" layoutX="572.0" layoutY="545.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@retry-removebg-preview.png" />
+            <Image url="@retry.png" />
          </image>
       </ImageView>
    </children>

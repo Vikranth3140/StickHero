@@ -14,7 +14,7 @@
    <children>
       <ImageView fitHeight="633.0" fitWidth="531.0" layoutX="1.0" pickOnBounds="true">
          <image>
-            <Image url="@underwater_scenery2.jpg" />
+            <Image url="@underwater_scenery.jpg" />
          </image>
       </ImageView>
       <Label layoutX="-7.0" layoutY="157.0" prefHeight="15.0" prefWidth="0.0">
@@ -24,7 +24,7 @@
       </Label>
       <ImageView fx:id="sharkImageView" fitHeight="150.0" fitWidth="200.0" layoutX="-7.0" layoutY="144.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@Untitled-removebg-preview.png" />
+            <Image url="@shark.png" />
          </image>
       </ImageView>
       <Rectangle arcHeight="30.0" arcWidth="30.0" fill="WHITE" height="225.0" layoutX="37.0" layoutY="134.0" stroke="WHITE" strokeType="INSIDE" width="463.0" />
@@ -64,7 +64,7 @@
             </Label>
             <ImageView fitHeight="41.0" fitWidth="37.0" layoutX="176.0" layoutY="19.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@9162409-removebg-preview.png" />
+                  <Image url="@cherry.png" />
                </image>
             </ImageView>
             <Label layoutX="217.0" layoutY="25.0" text="5" textFill="WHITE">
@@ -78,13 +78,13 @@
       <Rectangle arcHeight="25.0" arcWidth="25.0" height="84.0" layoutX="285.0" layoutY="480.0" stroke="BLACK" strokeType="INSIDE" width="87.0" />
       <ImageView fitHeight="78.0" fitWidth="87.0" layoutX="187.0" layoutY="482.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@home%20icon.png" />
+            <Image url="@home.png" />
          </image>
       </ImageView>
       <Circle fill="WHITE" layoutX="332.0" layoutY="520.0" radius="34.0" stroke="WHITE" strokeType="INSIDE" />
       <ImageView fitHeight="82.0" fitWidth="90.0" layoutX="290.0" layoutY="481.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@retry-removebg-preview.png" />
+            <Image url="@retry.png" />
          </image>
       </ImageView>
       <Button layoutX="286.0" layoutY="480.0" mnemonicParsing="false" onAction="#restart" opacity="0.0" prefHeight="78.0" prefWidth="87.0" text="Restart" />
