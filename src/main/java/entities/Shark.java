@@ -1,8 +1,10 @@
 package entities;
 
 import javafx.animation.TranslateTransition;
+import javafx.concurrent.Task;
 import javafx.scene.image.ImageView;
 import javafx.util.Duration;
+
 
 public class Shark {
     private ImageView sharkView;
@@ -34,6 +36,14 @@ public class Shark {
         this.positionY = positionY;
     }
 
+    public double getSpeed() {
+        return speed;
+    }
+
+    public void setSpeed(double speed) {
+        this.speed = speed;
+    }
+
     public void moveForward() {
         positionX += speed;
         sharkView.setX(sharkView.getX()+50);
@@ -55,10 +65,32 @@ public class Shark {
     public void translate(double distance) {
         TranslateTransition translate = new TranslateTransition();
         translate.setNode(sharkView);
-        translate.setDuration(Duration.millis(20000));
+        translate.setDuration(Duration.millis(15000));
         translate.setByX(distance);
         translate.play();
     }
+
+
+    public void moveForwardContinuously() {
+        Task<Void> task = new Task<>() {
+            @Override
+            protected Void call() {
+                while (true) {
+                    moveForward();
+                    try {
+                        Thread.sleep(1000);
+                    } catch (InterruptedException e) {
+                        // Handle interruption if needed
+                        break;
+                    }
+                }
+                return null;
+            }
+        };
+
+        new Thread(task).start();
+    }
+
 
     public Shark(double positionX, double positionY, double speed, ImageView sharkView) {
         this.positionX = positionX;

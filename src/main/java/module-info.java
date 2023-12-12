@@ -7,6 +7,8 @@ module com.example.stickhero {
     requires org.kordamp.ikonli.javafx;
     requires org.kordamp.bootstrapfx.core;
     requires com.almasb.fxgl.all;
+    requires javafx.media;
+    requires junit;
 
     opens com.example.stickhero to javafx.fxml;
     exports com.example.stickhero;
