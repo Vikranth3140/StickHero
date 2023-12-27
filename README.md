@@ -61,7 +61,11 @@ To run the Stick Hero Game, you need the following:
 - Collecting cherries increases the player's score.
 - The character can move upside down for added challenge.
 
-## Credits
+## License
+
+This project is licensed under the [MIT License](LICENSE.md).
+
+## Authors
 
 [Vikranth Udandarao](https://github.com/Vikranth3140)
 \
