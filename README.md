@@ -9,7 +9,8 @@ Stick Hero is a simple JavaFX game where the player controls a character who ext
 - [Game Controls](#game-controls)
 - [Features](#features)
 - [Game Rules](#game-rules)
-- [Credits](#credits)
+- [License](#license)
+- [Authors](#authors)
 
 ## Prerequisites
 
